@@ -13,7 +13,7 @@ export default function Home() {
       {console.log(data)}
       {data && data.recommendedProfiles?.map((profile, index) => {
         console.log(`Profile ${index}:`, profile);
-        return <><Profile key={profile.id} profile={profile} displayFullProfile={false} /> <hr> </hr></> ;
+        return <><Profile key={profile.id} profile={profile} displayFullProfile={false} /></> ;
       })}
     </div>
   )
