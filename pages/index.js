@@ -41,7 +41,7 @@ export default function Home() {
       {/* The Actual Profile Cards */}
       {data &&
         data.recommendedProfiles?.map((profile, index) => {
-          console.log(`Profile ${index}:`, profile);
+          // console.log(`Profile ${index}:`, profile);
           return (
             <>
               <Profile
