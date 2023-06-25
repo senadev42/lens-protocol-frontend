@@ -22,19 +22,35 @@ export default function ProfilePage() {
     },
   });
 
-  if (loading) return "Loading..";
-  if (error) return `Error! ${error.message}`;
+  if (loading || error) {
+    return (
+      <div className="flex justify-center items-center h-screen bg-gray-100">
+        <div className="flex flex-col items-center">
+          {loading && (
+            <div className="flex items-center">
+              <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-gray-900 mr-3"></div>
+              <p className="text-lg font-semibold">Loading</p>
+            </div>
+          )}
+          {error && (
+            <p className="text-center text-red-500">
+              <span className="text-lg font-semibold">Error:</span>{" "}
+              {error.message}
+            </p>
+          )}
+        </div>
+      </div>
+    );
+  }
 
   console.log("on profile page data: ", data);
   return (
     <div className="flex flex-col p-8 items-center">
       <Profile profile={data.profile} displayFullProfile={true} />
- 
+
       {data.publications.items.map((post, idx) => {
-        return <Post key={idx} post={post}/>;
+        return <Post key={idx} post={post} />;
       })}
- 
- 
     </div>
   );
 }
