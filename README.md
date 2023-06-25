@@ -1,34 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Decentralized Twitter V0.1
+
+This codebase is a client-side application that fetches recommended profiles from the Lens Protocol API and displays them in a decentralized Twitter-like interface.
 
 ## Getting Started
 
-First, run the development server:
+Before running the application, ensure that you have a working installation of Node.js and the required dependencies by running `npm install` in the project directory.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+To start the application, run `npm start` in the project directory. The application will be served on `http://localhost:3000`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Upon launching the app, recommended profiles will be fetched from the Lens Protocol API and displayed in profile cards. The cards contain basic information about the recommended profiles and can be clicked to display the full profile.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+If there are any errors or the data is still loading, a loading screen will be displayed until the data is ready.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Dependencies
 
-## Learn More
+This codebase uses the following dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+- `@apollo/client`: A client for GraphQL APIs
+- `react`: A JavaScript library for building user interfaces
+- `react-dom`: A package that provides DOM-specific methods for React
+- `graphql`: A query language for APIs
+- `tailwindcss`: A utility-first CSS framework for rapid UI development
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Contributions to this codebase are welcome. Please fork the repository, make your changes, and submit a pull request. For major changes, please open an issue first to discuss the proposed changes.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This codebase is licensed under the MIT License. See the `LICENSE` file for more information.
