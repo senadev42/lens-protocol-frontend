@@ -5,7 +5,7 @@ import Profile from "../components/Profile.js";
 export default function Home() {
   const { loading, error, data } = useQuery(recommendedProfilesQuery);
 
-  if (loading || error) {
+  if (loading || error || data.recommendedProfiles.length === 0) {
     return (
       <div className="flex justify-center items-center h-screen bg-gray-100">
         <div className="flex flex-col items-center">
@@ -21,6 +21,12 @@ export default function Home() {
               {error.message}
             </p>
           )}
+          { data && data.recommendedProfiles.length === 0 && (
+            <p className="text-center text-slate-400">
+               No recommended profiles found. Please check back later.
+            </p>
+          )
+          }
         </div>
       </div>
     );
